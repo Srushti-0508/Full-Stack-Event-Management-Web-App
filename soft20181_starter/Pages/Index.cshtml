@@ -1,0 +1,153 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@*  <link rel="stylesheet" href="~/css/index.css" /> *@
+
+@* <div id="carouselExampleFade" class="carousel slide carousel-fade w-200" data-bs-ride="carousel">
+    <img src="~/image/logo_img.png" class="logo-image position-absolute top-0 start-50 translate-middle-x" alt="Logo">
+    <div class="carousel-inner">
+        <div class="carousel-item active custom">
+            <img src="~/image/header_img.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-label text-center">
+                 <img src="~/image/logo_img.png" class="img-fluid" alt="Logo">
+                 <div class="carousel-caption-text">
+                     <h5>Each Event Exceeds Expectations</h5>
+                 </div>
+                </div>
+        </div>
+        <div class="carousel-item custom">
+            <img src="~/image/hd_img2.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-label text-center">
+                <img src="~/image/logo_img.png" class="img-fluid" alt="Logo">
+                <div class="carousel-caption-text">
+                    <h5>Each Event Exceeds Expectations</h5>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item custom">
+            <img src="~/image/hero-bg.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-label text-center">
+                <img src="~/image/logo_img.png" class="img-fluid" alt="Logo">
+                <div class="carousel-caption-text">
+                    <h5>Each Event Exceeds Expectations</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div> *@
+<!----Header bg image------>
+<div class="top_img">
+    
+    @* <div class="img_content">
+        <img class="logo_img" src="image/logo_img.png" alt="Bizvent_Logo">
+        <h1>
+            Each Event Exceeds Expectations
+        </h1>
+
+    </div> *@
+</div>
+
+
+<!----Events Section------>
+
+<div class="section-title">
+    <h2>Events</h2>
+    <p>Discover More Events!</p>
+</div>
+
+ @{
+        int eventCount = 0;
+    }
+<div class="row">
+    @foreach (var theEvent in @Model.Events)
+    {
+        if(eventCount < 3){
+        <div class="col-4">
+            <div class="card" style="margin-bottom: 20px">
+
+                <img src="@theEvent.CoverPhoto" class="card-img-top"
+                     alt="@theEvent.Name" style="max-height: 200px, max-width:150px;">
+
+                <div class="card-body">
+                    <h5 class="card-title">@theEvent.Name</h5>
+                    <p class="card-text">@theEvent.Description</p>
+                    <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="bi bi-geo-alt-fill"></i>@theEvent.Location</li>
+                            <li class="list-group-item"><i class="bi bi-calendar-check-fill"></i>@theEvent.EventDateTime</li>
+
+                    </ul>
+                    <div class="d-flex justify-content-between">
+                            <a asp-page="eventDetail" asp-route-id="@theEvent.Id"
+                           class="btn btn-custom">Find Out More</a>
+                        @* <a asp-page="EditEvent" asp-route-id="@theEvent.Id" asp-page-handler="Delete"
+                    class="btn btn-danger">Delete</a> *@
+                    </div>
+                </div>
+            </div>
+            </div>
+        }
+        eventCount++;
+    }
+</div>
+
+<!----------About Us-------->
+<div class="About">
+
+    <div class="section-title-2">
+        <h2>About Us</h2>
+        <p>Our Vision and Values</p>
+    </div>
+    <div class="card custom-card mt-0">
+        @* <div class="card-header">
+            Quote
+        </div> *@
+        <div class="card-body text-center">
+            
+            <blockquote class="blockquote mb-0">
+                <p class="para_txt">
+                    Encouraging Future: The Combination of Impact and Innovation! <br>
+                    Come experience a revolutionary journey into cutting-edge solutions,
+                    leadership, and unrivalled networking with us at Bizvent.<br> Boost your
+                    visibility in your industry and look to the future.
+                </p>
+                <h2 style="color: #957C3D;">"Together, let's shape tomorrow!"</h2>
+                @* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> *@
+            </blockquote>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer footer-expand-sm mt-auto py-3 ft-custom" style="margin-top:50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 ms-lg-5">
+                <h3 class="footer-h3">Name: Srushti Patel </h3>
+                <h3 class ="footer-h3">Email: N1150930@my.ntu.ac.uk</h3>
+            </div>
+
+            <div class="col-md-6 ms-lg-5">
+                <h3 class="footer-h3">&copy; 2024 All Rights are Reserved</h3>
+                <h3 class="footer-h3">
+                    Srushti Patel N1150930 owns the intellectual property
+                    rights to this website and its content.
+                    Any unauthorised use, replication, or dissemination is
+                    strictly forbidden.
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+

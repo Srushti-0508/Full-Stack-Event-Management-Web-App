@@ -1,0 +1,156 @@
+﻿@page
+@model soft20181_starter.Pages.adminDashboardModel
+@{
+}
+<div class="adminPage">
+<div class="sideNav">
+
+
+<div class="Event_Links">
+	<div class="section-title">
+		<h2>Manage Events</h2>
+	</div>
+	<ul class="dashboard_links">
+	<li>
+	<a asp-page="/AddEvent">Add Event</a>
+	</li>
+	<li>
+	<a asp-page="/editDltEvent">Edit or Remove Event</a>
+	</li>
+
+				
+
+</ul>
+</div>
+</div>
+
+<div class="mainContent">
+<!-------------Roles Table------------------------------------->
+		<div class="section-title">
+			<h2>Manage Roles</h2>
+		</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>User Roles</th>
+			<th>Delete Roles</th>
+		</tr>
+
+	</thead>
+	<tbody>
+		@foreach(var role in Model.roles)
+		{
+			<tr>
+				<td>@role.Id</td>
+				<td>@role.Name</td>
+				<td>
+					<a class="btn btn-sm btn-danger order-button float-right" asp-page="/adminDashboard"
+					asp-route-id="@role.Id" asp-page-handler="Delete">Delete Role</a>
+
+							
+				</td>
+			</tr>
+		}
+		
+	</tbody>
+	
+</table>
+<form method="post">
+
+	<input asp-for="roleName" class="form-control-sm" style="width:75%; margin-left:20px;"  />
+	<button type="submit" class="btn btn-custom mb-2">
+		Add New Role
+	</button>
+
+</form>
+
+<!-------------Users Table------------------------------------->
+<div class="section-title">
+	<h2>Manage User Details</h2>
+</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Users </th>
+			<th>Delete Users</th>
+			<th>Update Password</th>
+		</tr>
+
+	</thead>
+	<tbody>
+		@foreach (var user in Model.users)
+		{
+			<tr>
+				<td>@user.Id</td>
+				<td>@user.FirstName</td>
+				<td>
+					<a class="btn btn-sm btn-danger order-button float-right" asp-page="/adminDashboard"
+					   asp-route-id="@user.Id" asp-page-handler="Delete">Delete User
+				   </a>
+				</td>
+				<td>
+					<form method="post" asp-page-handler="Update" asp-route-id="@user.Id">
+						<input asp-for="Password" />
+						<input type="submit" value="Update Password" class="btn btn-link" />
+
+					</form>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<!-------------Contact Table------------------------------------->
+<div class="section-title">
+	<h2>Contact Us Information</h2>
+</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Inquiry</th>
+		</tr>
+
+	</thead>
+	<tbody>
+		@foreach (var contacts in Model.contact)
+		{
+			<tr>
+				<td>@contacts.Id</td>
+				<td>@contacts.Name</td>
+				<td>@contacts.Email</td>
+				<td>@contacts.Message</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+	</div> <!---col---->
+
+</div> <!---row---->
+<br />
+<footer class="footer footer-expand-sm mt-auto py-3">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 ms-lg-5">
+				<h3 class="footer-h3">Name: Srushti Patel </h3>
+				<h3 class="footer-h3">Email: N1150930@my.ntu.ac.uk</h3>
+			</div>
+
+			<div class="col-md-6 ms-lg-5">
+				<h3 class="footer-h3">&copy; 2024 All Rights are Reserved</h3>
+				<h3 class="footer-h3">
+					Srushti Patel N1150930 owns the intellectual property
+					rights to this website and its content.
+					Any unauthorised use, replication, or dissemination is
+					strictly forbidden.
+				</h3>
+			</div>
+
+		</div>
+	</div>
+</footer>

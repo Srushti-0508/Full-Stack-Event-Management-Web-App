@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="script.js" defer></script>
+    <title>EventDetail-3</title>
+</head>
+<body>
+<header id="header">
+    <span class="btn">
+        <span class="inc_btn">A+</span>
+        <span class="rst_btn">A</span>
+        <span class="dec_btn">A-</span>
+        <span class="darkbg_btn">Dark</span>
+        <span class="resetbg_btn">Grey</span>
+        <span class="lightbg_btn">Light</span>
+    </span>
+
+<!-------------Thumbnail Iamge------------------------------------->
+<div class="img_large">
+    <div class="imgbx">
+   <span class="cls_btn">&times;</span>
+    <img class="large" id ="large_img" src="image/event-3.jpg" alt="event-3">
+</div>
+</div>
+
+<!----------------Nav bar----------------->
+
+<nav id="nav">
+     <img class="logo-img" src="image/logo_img.png" alt="Bizvent_Logo">
+    
+    <ul>
+        <li><a href="index.html">Home </a></li>
+        <li><a href="events.html">Events </a></li>
+        <li><a href="contact.html">Contact us</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+
+<!------------------Top Image------------------------->
+
+<div id="banner"></div>
+
+<!-----------------Event-Details------------------------>
+<div class="event_info">
+<div class="col-3"> <!---Event-card-------->
+<div class="eventCard"> 
+<img id="event_img" src="image/event-3.jpg">
+<p class="para_txt"><img id="icon" src="image/cal.png" alt="calendar_icon">
+    14-02-2024</p>
+<p class="para_txt"><img id="icon" src="image/loc_icon.png" alt="location_icon">Bizvent Event Hall-5,
+    London, E1 7HT</p>
+<p class="para_txt"><img id="icon" src="image/time.png" alt="time_icon">
+    12:00 pm to 13:00 pm</p>
+</div>
+</div>
+
+
+<div class="col-2">
+    <div class="details">
+    <h1>Innovative Marketing Strategies</h1>
+<p>
+    Our expert lecturers will share the secrets of staying ahead in a market that is constantly 
+    changing. Take a deep dive into the creative process to acquire practical insights that will 
+    help you reach a wider audience, build stronger brand awareness, and achieve more success with 
+    your marketing campaigns. 
+    <br><br>
+    Don't miss out this excellent opportunity to grow your brand to new heights and maintain an advantage 
+    in the fast-paced world of marketing.
+    <br><br>
+    Don't lose the opportunity to network with like-minded professionals, share ideas, and explore new 
+    prospects. Join us on 14-02-2024 at Bizvent for a day of thought-provoking conversations, 
+    expert panels, and networking opportunities. <br><br>
+
+    <h3 >Contact us to Register your Interest</h3><br>
+    <li>Registration End date: 13-02-2024</li>
+    <li>Registration Charges: £5.50</li>
+    <li>Discount For Students: 10%</li>
+</p>
+</div>
+</div>
+</div>
+
+<footer id="footer">
+    <div class="event_info">
+        <div class="row-2">
+            <h3>Name: Srushti Patel </h3>
+            <h3>Email: N1150930@my.ntu.ac.uk</h3>
+            <h3></h3>
+        </div>
+
+        <div class="row-2">
+            <h3>&copy; 2024 All Rights are Reserved</h3>
+            <h3>Srushti Patel N1150930 owns the intellectual property 
+                rights to this website and its content. 
+                Any unauthorised use, replication, or dissemination is 
+                strictly forbidden.</h3>
+        </div>
+
+    </div>
+</footer>
+
+
+<script>
+/*-------------Thumbnail Image animation-------*/
+var eventImg= document.getElementById("event_img");
+var img_large =document.querySelector(".img_large");
+var cls_btn =document.querySelector(".cls_btn");
+
+eventImg.addEventListener('click', function(){
+    img_large.style.display = 'block';
+
+    cls_btn.addEventListener('click', function(){
+        img_large.style.display = 'none';
+    })
+    
+});
+
+</script>
+</body>
+</html>

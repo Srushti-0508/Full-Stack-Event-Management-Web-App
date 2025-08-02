@@ -1,0 +1,39 @@
+﻿@page
+@model soft20181_starter.Pages.EditEventModel
+@{
+}
+<form method="post">
+
+	<input type="text" asp-for="@Model.theEvent.Id" readonly />
+	<input type="text" asp-for="@Model.theEvent.Name" />
+	<input type="text" asp-for="@Model.theEvent.Description" />
+	<input type="text" asp-for="@Model.theEvent.Location" />
+	<input type="text" asp-for="@Model.theEvent.EventDateTime" />
+	<input type="text" asp-for="@Model.theEvent.CoverPhoto" />
+	<input type="text" asp-for="@Model.theEvent.EventImg" />
+	<input type="submit" value="Update" />
+
+
+</form>
+
+<footer class="footer footer-expand-sm mt-auto py-3 ft-custom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 ms-lg-5">
+                <h3 class="footer-h3">Name: Srushti Patel </h3>
+                <h3 class="footer-h3">Email: N1150930@my.ntu.ac.uk</h3>
+            </div>
+
+            <div class="col-md-6 ms-lg-5">
+                <h3 class="footer-h3">&copy; 2024 All Rights are Reserved</h3>
+                <h3 class="footer-h3">
+                    Srushti Patel N1150930 owns the intellectual property
+                    rights to this website and its content.
+                    Any unauthorised use, replication, or dissemination is
+                    strictly forbidden.
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</footer>

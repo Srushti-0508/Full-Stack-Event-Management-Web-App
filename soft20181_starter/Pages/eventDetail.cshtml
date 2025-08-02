@@ -1,0 +1,207 @@
+﻿@page 
+@model soft20181_starter.Pages.eventDetailModel
+@{
+}
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    .thumbnail {
+        cursor: pointer;
+        width: 150px; /* Adjust thumbnail width */
+        margin-bottom: 10px; /* Add space between thumbnails */
+    }
+
+   .thumbnail:hover {
+            border: 2px solid #007bff; /* Highlight thumbnail on hover */
+        }
+
+    #enlargedImage {
+        max-width: 100%;
+      margin:0;
+        
+    }
+    .ul{
+        list-style-type:none;
+    }
+
+    
+        
+    
+    
+</style>
+
+@* <div class="container mt-5">
+    <div class="row">
+        <!-- Thumbnails -->
+        <div class="col-4">
+            <img src="@Model.Event.CoverPhoto" class="img-fluid thumbnail" alt="Thumbnail 1">
+        </div>
+        <div class="col-4">
+            <img src="~/image/event-2.jpg" class="img-fluid thumbnail" alt="Thumbnail 2">
+        </div>
+         <div class="col-4">
+                <img src="~/image/event-3.jpg" class="img-fluid thumbnail" alt="Thumbnail 3">
+         </div>
+                <!-- Add more thumbnails as needed -->
+        
+
+
+
+    <!-- Content Section -->
+    <div class="col-md-8">
+        <h2>Content</h2>
+        <p>This is some content...</p>
+    </div>
+
+
+        <!-- Enlarged Image -->
+        <div class="row mt-5">
+        <div class="col">
+            <img src="@Model.Event.CoverPhoto"id="enlargedImage" class="img-fluid" alt="Enlarged Image">
+        </div>
+        </div>
+
+    </div>
+</div> *@
+
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Thumbnails Section -->
+        <div class="col-md-2">
+            @* <h2>Thumbnail Gallery</h2> *@
+            <img src="@Model.Event.CoverPhoto" class="img-fluid thumbnail" alt="Thumbnail 1">
+            @* <img src="@Model.Event.CoverPhoto" class="img-fluid thumbnail" alt="Thumbnail 2"> *@
+            <img src="@Model.Event.EventImg" class="img-fluid thumbnail" alt="Thumbnail 3">
+            <!-- Add more thumbnails as needed -->
+        </div>
+
+        <!-- Enlarged Image Section -->
+        <div class="col-md-6">
+            <img src="@Model.Event.CoverPhoto"  id="enlargedImage" class="img-fluid" alt="Enlarged Image">
+        </div>
+
+        <!-- Content Section -->
+        <div class="col-md-4">
+            <h2 class="cairo-font">@Model.Event.Name</h2>
+            <p>@Model.Event.Description</p>
+            
+            <h6><i class="bi bi-geo-alt-fill"></i>@Model.Event.Location</h6>
+            <h6><i class="bi bi-calendar-check-fill"></i>@Model.Event.EventDateTime</h6>
+
+            <!-- Add Event to List buttons -->
+            <br />
+            <button type="button" class="btn btn-primary btn-floating" data-mdb-ripple-init>
+                <i class="bi bi-bookmark-check-fill me-2"></i>Add Event
+            </button>
+            <button type="button" class="btn btn-primary btn-floating" data-mdb-ripple-init>
+                <i class="bi bi-bookmark-dash-fill me-2"></i>Remove Event
+            </button>
+            <br /><br />
+            <!-- Book ticket buttons -->
+            
+            <div class="input-group mb-3">
+            <button type="button" class="btn btn-secondary btn-rounded data-mdb-ripple-init">Book Tickets</button>
+            <div class="input-group-prepend">
+                    <button class="btn btn-secondary ml-3" id="qty-plus" type="button">+</button>
+             </div>
+
+       <input type="text" id="qty" class="" style="width: 60px;" value="0" placeholder="Qty"@*  min="1" max="100" *@>
+                <div class="input-group-prepend">
+                    <button class="btn btn-secondary" id="qty-minus" type="button">-</button>
+                </div>
+            </div>
+        </div>
+
+      <!--row -->  </div>
+    <!--cont --></div>
+<div class="section-title">
+    <h2>Recommend</h2>
+    <p>We Recommend</p>
+</div>
+<div class="row">
+    @foreach (var RecEvent in @Model.EventSuggestions)
+    {
+       
+            <div class="col-4">
+                <div class="card" style="margin-bottom: 20px">
+
+                <img src="@RecEvent.CoverPhoto" class="card-img-top"
+                     alt="@RecEvent.Name" style="max-height: 200px, max-width:150px;">
+
+                    <div class="card-body">
+                    <h5 class="card-title">@RecEvent.Name</h5>
+                    <p class="card-text">@RecEvent.Description</p>
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item">@RecEvent.Location</li>
+                        <li class="list-group-item">@RecEvent.EventDateTime</li>
+
+                        </ul>
+                        <div class="d-flex justify-content-between">
+                        <a asp-page="EditEvent" asp-route-id="@RecEvent.Id"
+                               class="btn btn-primary">Find Out More</a>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+       
+    }
+</div>
+<footer class="footer footer-expand-sm mt-auto py-3 ft-custom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 ms-lg-5">
+                <h3 class="footer-h3">Name: Srushti Patel </h3>
+                <h3 class="footer-h3">Email: N1150930@my.ntu.ac.uk</h3>
+            </div>
+
+            <div class="col-md-6 ms-lg-5">
+                <h3 class="footer-h3">&copy; 2024 All Rights are Reserved</h3>
+                <h3 class="footer-h3">
+                    Srushti Patel N1150930 owns the intellectual property
+                    rights to this website and its content.
+                    Any unauthorised use, replication, or dissemination is
+                    strictly forbidden.
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+<!-- Bootstrap JavaScript and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    console.log('JavaScript executed!');
+    $(document).ready(function () {
+        // Function to handle thumbnail click
+        $('.thumbnail').on('click', function () {
+            var src = $(this).attr('src');
+            $('#enlargedImage').attr('src', src);
+        });
+    });
+    
+        const inc = document.getElementById('qty-plus');
+        const dec = document.getElementById('qty-minus');
+        const quantity = document.getElementById('qty');
+
+        inc.addEventListener('click', function () {
+            quantity.value = parseInt(quantity.value) + 1;
+        });
+
+        dec.addEventListener('click', function () {
+            if (parseInt(quantity.value) > 1) {
+                quantity.value = parseInt(quantity.value) - 1;
+            }
+        });
+    
+</script>

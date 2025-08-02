@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="script.js" defer></script>
+    <title>Contact</title>
+</head>
+<body>
+    
+<header id="header">
+   
+    <span class="btn">
+        <span class="inc_btn">A+</span>
+        <span class="rst_btn">A</span>
+        <span class="dec_btn">A-</span>
+        <span class="darkbg_btn">Dark</span>
+        <span class="resetbg_btn">Grey</span>
+        <span class="lightbg_btn">Light</span>
+    </span>
+
+<!---------------Nav bar---------------->
+<nav id="nav">
+     <img class="logo-img" src="image/logo_img.png" alt="Bizvent_Logo">
+    <ul>
+        <li><a href="index.html">Home </a></li>
+        <li><a href="events.html">Events </a></li>
+        <li><a href="">Contact us</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<div class="Contact_container">
+<div class="small_container">
+    <div class="contact_info">
+<h2>Contact Us</h2>
+<h4>Please Contact Us for any inquires or visits.
+    Our Team will try to get back to you as soon as possible. 
+</h4>
+        <div class="content">
+          <div class="icon_img">
+            <img src="image/location.png">
+          </div>
+          <div class="text">
+            <h3>Address <br>
+                The Bizvent Event Halls,
+                London, E1 7HT
+            </h3>
+          </div>
+          
+        </div>
+        <div class="content">
+            <div class="icon_img">
+                <img src="image/phone.png">
+            </div>
+            <div class="text">
+              <h3>Phone<br>
+                 0789623278</h3>
+            </div>
+            
+          </div>
+          <div class="content">
+            <div class="icon_img">
+                <img src="image/email.png">
+            </div>
+            <div class="text">
+              <h3>Email<br>
+                 bizvent@gmail.com</h3>
+            </div>
+            
+          </div>
+
+          <div class="content">
+            <div class="icon_img">
+                <img src="image/clock.png">
+            </div>
+            <div class="text">
+              <h3>Working Hours<br>
+                 9:30am to 5:00pm Monday-Friday</h3>
+            </div>
+            
+          </div>
+    </div>
+
+<form class="contact_form">
+
+    <div class="form_content">
+    <label for="name">Name</label>
+    <input id="name" type="text" placeholder="Enter your name" />
+    <div id="name_err"></div>
+</div>
+
+<div class="form_content">
+    <label for="email">Email</label>
+    <input id="email" type="text" placeholder="Enter your Valid Email Address" />
+    <div id="email_err"></div>
+</div>
+
+<div class="form_content">
+    <label for="Msg">Message</label>
+    <textarea id="Msg" placeholder="Please enter reason for contacting" rows="5" ></textarea>
+    <div id="msg_err"></div>
+</div>
+
+<div class="form_content">
+    <label for="Tel_no">Telephone</label>
+    <input id="Tel_no" type="text" placeholder="Please enter your number" />
+    <div id="Tel_err"></div>
+</div>
+<div class="Send">
+    <input type="submit" value="Send Request" />
+</div>
+<p id="Success"></p>
+
+
+</form>
+</div>
+</div>
+
+<!---------Footer------>
+<footer id="footer">
+    <div class="event_info">
+        <div class="row-2">
+            <h3>Name: Srushti Patel </h3>
+            <h3>Email: N1150930@my.ntu.ac.uk</h3>
+            <h3></h3>
+        </div>
+
+        <div class="row-2">
+            <h3>&copy; 2024 All Rights are Reserved</h3>
+            <h3>Srushti Patel N1150930 owns the intellectual property 
+                rights to this website and its content. 
+                Any unauthorised use, replication, or dissemination is 
+                strictly forbidden.</h3>
+        </div>
+
+    </div>
+</footer>
+
+
+<script>
+
+/*------Contact Form Validations------*/
+
+const contact_form = document.querySelector(".contact_form");
+var F_name = document.querySelector("#name");
+var email = document.querySelector("#email");
+var msg = document.querySelector("#Msg");
+var tel_no = document.querySelector("#Tel_no");
+
+var name_err = document.querySelector("#name_err");
+var email_err = document.querySelector("#email_err");
+var msg_err = document.querySelector("#msg_err");
+var Tel_err = document.querySelector("#Tel_err");
+
+var email_validate = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+var tel_validate = /^\d{10}$/;
+let err_txt_Flag = false;
+
+
+
+contact_form.addEventListener ('submit',SubmitForm);
+
+function SubmitForm(e){
+    e.preventDefault();
+    remove_err_text();
+    if(F_name.value.length < 1 ){
+        name_err.innerHTML ="Name is required";
+        F_name.classList.add("err_border");
+        err_txt_Flag =true;
+    }
+
+   if(email.value.length<1){
+    email_err.innerHTML = "Email is required";
+    email.classList.add("err_border");
+    err_txt_Flag =true;
+   } 
+ else if(!email.value.match(email_validate)){
+    email_err.innerHTML = "please enter the valid email address";
+    email.classList.add("err_border");
+    err_txt_Flag =true;
+    }
+
+if(msg.value.length < 1 ){
+        msg_err.innerHTML ="Please enter the reason for inquiry";
+        err_txt_Flag =true;   
+    }
+
+    if(tel_no.value.length<1){
+        Tel_err.innerHTML = "Telephone Number is required";
+        tel_no.classList.add("err_border");
+        err_txt_Flag =true;
+   } 
+else if(!tel_no.value.match(tel_validate)){
+    Tel_err.innerHTML ="Please enter the valid Telephone Number";
+     tel_no.classList.add("err_border");
+     err_txt_Flag =true;
+    }
+ if(!err_txt_Flag){
+    document.getElementById("Success").innerHTML = "We have recevied your Request. Thank you for Contacting US "+ F_name.value;
+}
+
+err_txt_Flag = false;
+}
+
+
+function remove_err_text(){
+name_err.innerHTML= "";
+email_err.innerHTML="";
+Tel_err.innerHTML="";
+msg_err.innerHTML="";
+
+F_name.classList.remove("err_border");
+email.classList.remove("err_border");
+msg.classList.remove("err_border");
+tel_no.classList.remove("err_border");
+}
+
+
+
+</script>
+</body>
+</html> 

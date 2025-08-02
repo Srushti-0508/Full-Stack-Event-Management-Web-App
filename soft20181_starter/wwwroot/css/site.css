@@ -1,0 +1,400 @@
+/* Write your CSS here* blue #002349  Gold:#957C3D*/
+
+.custom-nav {
+    background-color: #254E58;
+}
+
+.navbar-nav .nav-link{
+    color: white;
+    transition: border-bottom-width 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+    .navbar-nav .nav-link:hover {
+        color: white;
+        border-bottom: 2px solid #957C3D;
+    }
+
+
+
+.section-title h2 {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1px;
+    margin: 50px 0 5px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #002349;
+    font-family: "Poppins", sans-serif;
+}
+
+    .section-title h2::after {
+        content: "";
+        width: 120px;
+        height: 1px;
+        display: inline-block;
+        background-color: #002349;
+        margin: 4px 10px;
+    }
+
+.section-title p {
+    margin: 0;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+    color: #6E6658;
+}
+.About{
+    background-color:#88bdbc;
+    margin-top:50px;
+    margin-bottom:60px;
+    height:380px;
+}
+
+.custom-card {
+    
+    margin: 0px 35px 150px 35px;
+}
+
+
+.para_txt {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color:#254E58;
+    padding:15px;
+    margin:15px;
+}
+
+
+.section-title-2 h2 {
+    font-size: 14px;
+    font-weight: 500;
+    padding-top:25px;
+    line-height: 1px;
+    margin: 50px 0 0 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #957C3D;
+    font-family: "Poppins", sans-serif;
+}
+
+    .section-title-2 h2::after {
+        content: "";
+        width: 120px;
+        height: 1px;
+        display: inline-block;
+        background-color: #6e6658;
+        margin: 4px 10px;
+    }
+
+.section-title-2 p {
+    margin-left: 10px;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+    color: #254E58;
+}
+
+.list-group .list-group-item {
+    border-bottom: 2px solid #957C3D; /* Customize the border */
+}
+
+.card {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom{
+  border: 2px solid #88bdbc;
+  color:#002349;
+  margin: 5px;
+}
+
+    .btn-custom:hover {
+        color: white;
+        background-color: #88bdbc;
+    }
+
+/*-------Login and Register------------- */
+.custom_hd {
+    margin-top: 50px;
+    text-align:center;
+    color: #88bdbc;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+    margin-bottom:40px;
+}
+
+.custom_hd2 {
+    margin-top:25px;
+    text-align: center;
+    color: #88bdbc;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 20px;
+}
+.bg-img {
+    background-image: url('../image/event_img.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 580px;
+    
+}
+.bg-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* width to cover left section */
+    
+}
+.Login_form {
+    position:relative;
+    padding:25px;
+    
+}
+
+.form-label{
+    color:#254E58;
+}
+
+carousel-custom {
+    top: 0;
+}
+.reg_link {
+    color: #254E58;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    
+}
+
+    .reg_link:hover {
+        color: rgba(0, 0, 0, 0.5);
+    }
+.a_link{
+    margin-top:30px;
+    text-align:center;
+}
+.a_link2 {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.top_img {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../image/6.1.jpg");
+    background-size: cover;
+    /* min-height: 600px;*/
+    background-position: center;
+}
+
+.carousel-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.carousel-caption-text {
+    position: relative;
+    top:5px; 
+    color: white;
+    font-size: 30px;
+}
+
+.card {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
+}
+
+.img-fluid{
+    height: 100px;
+}
+.custom{
+    height:750px;
+}
+.logo_font {
+    font-family: "Bruno Ace SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.contact-form {
+    width: 600px;
+    margin: 50px auto;
+    background-color: #fcfcfc;
+    padding: 20px 50px 40px;
+    border: 1px solid #eee;
+    font-family: sans-serif;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+    .contact-form * {
+        box-sizing: border-box;
+        
+    }
+.contact-detail {
+    margin-top: 50px;
+    margin-left:10px;
+    
+}
+
+.contact_p {
+    padding: 10px;
+    margin: 10px;
+    font-family: "Poppins", sans-serif;
+    font-family: 20px;
+    font-weight: 500;
+    color: #002349;
+     
+}
+.contact-form h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  color:#254E58;
+}
+
+    .contact-form .success {
+        border: 1px solid green;
+        padding: 10px;
+        text-align: center;
+        background: #d7e6d7;
+        margin: 15px 0 30px 0;
+    }
+
+        .contact-form .success span {
+            font-weight: bold;
+        }
+
+        .contact-form .form-element {
+            margin-bottom: 15px;
+        }
+
+    .contact-form .form-element span {
+        color: red;
+        font-size: 0.8em;
+        padding-left: 5px;
+    }
+
+.contact-form input[type="text"], .contact-form textarea {
+    display: block;
+   
+    height: 32px;
+    padding: 6px 16px;
+    width: 100%;
+    border: none;
+    color: #957C3D;
+    background-color: #f3f3f3;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+}
+ 
+
+.contact-form button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+  width: 150px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  color: #eee;
+  font-weight: 700;
+  background: #207cca;
+}
+
+
+.cairo-font {
+    font-family: "Cairo", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    
+    /*font-variation-settings: "slnt" 0;*/
+}
+.custom-mr{
+    margin-right: 10px;
+}
+
+
+/*----Admin Page---------*/
+.adminPage{
+    display:flex;
+}
+.sideNav {
+    flex-direction: column;
+    width: 250px;
+    background-color: #b6e5e4;
+    padding: 20px;
+}
+.Event_Links{
+    margin-top:50px;
+    text-align:center;
+}
+
+.dashboard_links{
+    list-style-type:none;
+    padding:10px;
+    margin-top:150px;
+}
+.dashboard_links li{
+
+    padding:15px;
+    margin-top:18px;
+}
+
+    .dashboard_links li a{
+        text-decoration: none;
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: #254E58;
+        transition: border-bottom-width 0.3s;
+        border-bottom: 2px solid transparent;
+    }
+
+        .dashboard_links li a:hover{
+            border-bottom: 2px solid #957C3D;
+        }
+        .mainContent {
+            flex: 1;
+            padding: 20px;
+        }
+
+.table-striped{
+    color:#002349;
+    margin-top:15px;
+    margin-left:20px;
+}
+
+.btn-link{
+    text-decoration: none;
+    color: #254E58;
+    transition: border-bottom-width 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+    .btn-link:hover {
+        border-bottom: 2px solid #002349;
+    }
+
+.footer {
+    background-color: #254E58;
+}
+
+.footer-h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    margin-top:15px;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="script.js" defer></script>
+    <title>Home Page</title>
+</head>
+<body>
+    
+<header id="header">
+    <span class="btn">
+        <span class="inc_btn">A+</span>
+        <span class="rst_btn">A</span>
+        <span class="dec_btn">A-</span>
+        <span class="darkbg_btn">Dark</span>
+        <span class="resetbg_btn">Grey</span>
+        <span class="lightbg_btn">Light</span>
+    </span>
+
+<!----------Nav bar-------->
+<nav id="nav">
+     <img class="logo-img" src="image//logo_img.png" alt="Bizvent_Logo">
+    
+    <ul id="MenuItems">
+        <li><a href="">Home </a></li>
+        <li><a href="events.html">Events </a></li>
+        <li><a href="contact.html">Contact us</a></li>     
+
+</ul>
+
+</nav>
+</div>
+</header>
+
+<!----Header bg image------>
+<div class="top_img">
+    <div class="img_content">
+    <img class="logo_img" src="image/logo_img.png" alt="Bizvent_Logo">
+   <h1> Each Event Exceeds Expectations
+   </h1>
+   
+</div>
+</div>
+
+
+<!----------Events Section-------->
+
+<div class="container">
+<h1> Events </h1>
+<hr id="hr_dash">
+<h2> Browse our latest events and more</h2>
+
+
+</div>
+
+<div class="events_area">
+    
+</div> 
+<div class="event_link">
+    <button><a href="events.html">View More Events
+    </a></button>
+</div>
+
+<!----------About Us Section-------->
+<div id="banner_2">
+    <div class="banner_2_content">
+<p class="Para_text">
+Encouraging Future: The Combination of Impact and Innovation! <br>
+Come experience a revolutionary journey into cutting-edge solutions,
+leadership, and unrivalled networking with us at Bizvent.<br> Boost your 
+visibility in your industry and look to the future.</p>
+<h2>''Together, let's shape tomorrow!"</h2>
+</div>
+
+</div>
+
+
+<!----------Footer-------->
+<footer id="footer">
+    <div class="event_info">
+        <div class="row-2">
+            <h3>Name: Srushti Patel </h3>
+            <h3>Email: N1150930@my.ntu.ac.uk</h3>
+            <h3></h3>
+        </div>
+
+        <div class="row-2">
+            <h3>&copy; 2024 All Rights are Reserved</h3>
+            <h3>Srushti Patel N1150930 owns the intellectual property 
+                rights to this website and its content. 
+                Any unauthorised use, replication, or dissemination is 
+                strictly forbidden.</h3>
+        </div>
+
+    </div>
+</footer>
+
+
+
+<!----------JS to display events-------->
+<script>
+var eventData = document.querySelector(".events_area");
+
+fetch("event_details_home.json")
+.then(response=>{
+    return response.json();
+})
+.then(function createDynamicEvent(eventdetailsArray){
+   
+  
+    eventdetailsArray.forEach(function (eventDetails){
+        const event_holder =document.createElement('div');
+        event_holder.classList.add('event_holder');
+        event_holder.id = `${eventDetails.id}`;
+        
+        event_holder.innerHTML= `
+        <img class="eventImg" src=${eventDetails.image}>
+        <p class='ev_title'>${eventDetails.title}</p>
+        <p class='ev_date'>${eventDetails.date}</p>
+        <p class=ev_add>${eventDetails.location}</p>
+        `;
+    
+       event_holder.addEventListener('click',function(){
+        window.location.href= `event_detail_${eventDetails.id}.html`;
+       })
+        eventData.appendChild(event_holder);
+    
+});
+});
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+[
+   {
+   "id": "1",
+   "image":"image/event-1.jpg",
+    "title": "xxSustainable Business Practices",
+    "date": "12-02-2024",
+    "location":"Bizvent Event Hall-5, London, E1 7HT"
+   },
+   {
+   "id": "2",
+   "image":"image/event-2.jpg",
+    "title": "Cyber Security best practices in IT",
+    "date": "14-02-2024",
+    "location":"Bizvent Event Hall-1, London, E1 7HT"
+   },
+   {
+      "id": "3",
+      "image":"image/event-3.jpg",
+    "title": "Innovative Marketing Strategies",
+    "date": "14-02-2024",
+    "location":"Bizvent Event Hall-5, London, E1 7HT"
+   },
+   {
+   "id": "4",
+   "image":"image/event-4.jpg",
+    "title": "Mental Health Awareness",
+    "date": "16-02-2024",
+    "location":"Bizvent Event Hall-2, London, E1 7HT"
+   },
+   {
+      "id": "5",
+      "image":"image/event-5.jpg",
+    "title": "IT in industry Webinar",
+    "date": "18-02-2024",
+    "location":"Join it through Microsoft Teams"
+   }
+   
+
+
+
+
+
+
+
+
+]
