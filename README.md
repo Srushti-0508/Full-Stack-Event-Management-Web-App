@@ -1,4 +1,3 @@
-# SOFT20181 Starter Code
 # Event Management Web Application
 
 **A full-stack event management system** built with **ASP.NET Core Razor Pages**, **Entity Framework Core**, and **SQLite**, featuring user authentication, role-based access, search & filter, and an admin dashboard for managing events, users, and messages.  
@@ -59,7 +58,7 @@
 
 ---
 
-## ⚙️ Configure the database
+## 🗄️Configure the database
 
 2. **Update appsettings.json with your SQLite connection string (if needed)**
 3. **Run migrations:**
@@ -67,7 +66,7 @@ dotnet ef database update
 3. **Run the application**
 dotnet run
 
-## Access in browser
+## 🌐 Access in browser
 
 If running in Visual Studio, the application will open automatically in your default browser.
 The URL will look like https://localhost:xxxx or http://localhost:xxxx (port number may vary).
@@ -75,7 +74,7 @@ You can check the exact port in:
 The Visual Studio toolbar (next to the run button), or
 Properties/launchSettings.json under "applicationUrl".
 
-## How to run the code
+## 💻 How to run the code
 
 - Download or Clone the repository
 - Double click on the .sln file to open it with Visual Studio (or Open Visual Studio and Click "Open Solution")
